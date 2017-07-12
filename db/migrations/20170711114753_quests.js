@@ -5,7 +5,9 @@ exports.up = (knex) => {
     table.string('name').notNullable()
     table.text('description').notNullable()
     table.bigInteger('xp_amount').notNullable()
+    table.string('project_name')
     table.integer('project_id')
+    table.integer('story_id')
     table.timestamps(true, true)
   })
 }

@@ -6,7 +6,7 @@ exports.up = (knex) => {
     table.string('last_name').notNullable()
     table.string('email').notNullable()
     table.string('password').notNullable()
-    table.integer('avatar_id').notNullable()
+    table.text('avatar_url').notNullable()
     table.integer('team_id')
     table.timestamps(true, true)
   })

@@ -4,7 +4,7 @@ exports.up = (knex) => {
     table.integer('manager_id')
     table.integer('lead_id').notNullable()
     table.string('team_name').notNullable()
-    table.integer('avatar_id').notNullable()
+    table.text('avatar_url').notNullable()
     table.timestamps(true, true)
   })
 }
