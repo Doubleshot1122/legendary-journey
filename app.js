@@ -20,11 +20,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+const index = require('./routes/index');
+// const users = require('./routes/users');
+// const dashboard = require('./routes/dashboard');
+// const quests = require('../routes/quests');
+// const skills = require('../routes/skills');
 
 app.use('/', index);
-app.use('/users', users);
+// app.use('/users', users);
+// app.use('/dashboard', dashboard);
+// app.use('/quests', quests);
+// app.use('/skills', skills)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
