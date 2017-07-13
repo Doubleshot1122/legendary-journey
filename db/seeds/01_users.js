@@ -7,7 +7,7 @@ exports.seed = function(knex) {
             first_name: 'Rick',
             last_name: 'Sanchez',
             email: 'rick@c137.com',
-            password: '1234',
+            hashed_password: '$2a$12$C9AYYmcLVGYlGoO4vSZTPud9ArJwbGRsJ6TUsNULzR48z8fOnTXbS',
             avatar_url: 'http://www.pngall.com/wp-content/uploads/2016/05/Man-PNG-File.png',
             team_id: 1
         },
@@ -16,7 +16,7 @@ exports.seed = function(knex) {
             first_name: 'Morty',
             last_name: 'Smith',
             email: 'morty@c137.com',
-            password: '1234',
+            hashed_password: '$2a$12$C9AYYmcLVGYlGoO4vSZTPud9ArJwbGRsJ6TUsNULzR48z8fOnTXbS',
             avatar_url: 'http://www.pngall.com/wp-content/uploads/2016/05/Man-Download-PNG.png',
             team_id: 1
         },
@@ -25,7 +25,7 @@ exports.seed = function(knex) {
             first_name: 'Jerry',
             last_name: 'Smith',
             email: 'none@test.com',
-            password: '1234',
+            hashed_password: '$2a$12$C9AYYmcLVGYlGoO4vSZTPud9ArJwbGRsJ6TUsNULzR48z8fOnTXbS',
             avatar_url: 'http://www.pngall.com/wp-content/uploads/2016/05/Man-PNG-Image.png',
             team_id: 1
         },
@@ -34,7 +34,7 @@ exports.seed = function(knex) {
             first_name: 'Lucius',
             last_name: 'Needful',
             email: 'satan@hell.com',
-            password: '123',
+            hashed_password: '123',
             avatar_url: 'http://www.pngall.com/wp-content/uploads/2016/04/Happy-Person-PNG-Picture.png',
             team_id: 2
         },
@@ -43,7 +43,7 @@ exports.seed = function(knex) {
             first_name: 'Beth',
             last_name: 'Smith',
             email: 'beth@c138.com',
-            password: '1234',
+            hashed_password: '$2a$12$C9AYYmcLVGYlGoO4vSZTPud9ArJwbGRsJ6TUsNULzR48z8fOnTXbS',
             avatar_url: 'http://www.pngall.com/wp-content/uploads/2016/04/Girl-Download-PNG.png',
             team_id: 1
         },
@@ -52,7 +52,7 @@ exports.seed = function(knex) {
             first_name: 'Summer',
             last_name: 'Smith',
             email: 'happy@lovely.com',
-            password: '1234',
+            hashed_password: '$2a$12$C9AYYmcLVGYlGoO4vSZTPud9ArJwbGRsJ6TUsNULzR48z8fOnTXbS',
             avatar_url: 'http://www.pngall.com/wp-content/uploads/2016/04/Girl-High-Quality-PNG.png',
             team_id: 1
         },
@@ -61,7 +61,7 @@ exports.seed = function(knex) {
             first_name: 'Christina',
             last_name: 'Hendricks',
             email: 'everything@everything.com',
-            password: '1234',
+            hashed_password: '$2a$12$C9AYYmcLVGYlGoO4vSZTPud9ArJwbGRsJ6TUsNULzR48z8fOnTXbS',
             avatar_url: 'http://www.pngall.com/wp-content/uploads/2016/04/Girl-PNG-HD.png',
             team_id: 2
         },
@@ -70,7 +70,7 @@ exports.seed = function(knex) {
             first_name: 'Chelsea',
             last_name: 'Kane',
             email: 'catperson@purge.com',
-            password: '1234',
+            hashed_password: '$2a$12$C9AYYmcLVGYlGoO4vSZTPud9ArJwbGRsJ6TUsNULzR48z8fOnTXbS',
             avatar_url: 'http://www.pngall.com/wp-content/uploads/2016/05/Model-PNG-Clipart.png',
             team_id: 3
         }]);
