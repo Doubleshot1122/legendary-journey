@@ -1,36 +1,54 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+if (process.env.NODE_ENV !== 'production' && !process.env.IS_BUILD) {
+  require('dotenv').config();
+}
 
-var app = express();
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const cookieSession = require('cookie-session');
+
+const app = express();
 app.disable('x-powered-by');
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+// // view engine setup
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cookieSession({
+  name: 'legendary-journey',
+  secret: process.env.SESSION_SECRET,
+  secure: app.get('env') === 'production'
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// CSRF protection
+app.use((req, res, next) => {
+  if (/json/.test(req.get('Accept'))) {
+    return next();
+  }
+
+  res.sendStatus(406);
+});
+
 const index = require('./routes/index');
-// const users = require('./routes/users');
+const users = require('./routes/users');
 // const dashboard = require('./routes/dashboard');
 // const quests = require('../routes/quests');
 // const skills = require('../routes/skills');
 
 app.use('/', index);
-// app.use('/users', users);
+app.use('/users', users);
 // app.use('/dashboard', dashboard);
 // app.use('/quests', quests);
-// app.use('/skills', skills)
+// app.use('/skills', skills);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -47,7 +65,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.json("error");
 });
 
 module.exports = app;
