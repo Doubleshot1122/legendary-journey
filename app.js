@@ -13,10 +13,6 @@ const cookieSession = require('cookie-session');
 const app = express();
 app.disable('x-powered-by');
 
-// // view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'ejs');
-
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -30,13 +26,13 @@ app.use(cookieSession({
 app.use(express.static(path.join(__dirname, 'public')));
 
 // CSRF protection
-app.use((req, res, next) => {
-  if (/json/.test(req.get('Accept'))) {
-    return next();
-  }
-
-  res.sendStatus(406);
-});
+// app.use((req, res, next) => {
+//   if (/json/.test(req.get('Accept'))) {
+//     return next();
+//   }
+//
+//   res.sendStatus(406);
+// });
 
 const index = require('./routes/index');
 const users = require('./routes/users');
