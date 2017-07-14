@@ -34,7 +34,7 @@ exports.seed = function(knex) {
             first_name: 'Lucius',
             last_name: 'Needful',
             email: 'satan@hell.com',
-            hashed_password: '123',
+            hashed_password: '$2a$12$C9AYYmcLVGYlGoO4vSZTPud9ArJwbGRsJ6TUsNULzR48z8fOnTXbS',
             avatar_url: 'http://www.pngall.com/wp-content/uploads/2016/04/Happy-Person-PNG-Picture.png',
             team_id: 2
         },
