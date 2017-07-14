@@ -19,4 +19,9 @@ function index(req, res, next) {
   User.all().then(user => res.json(user))
 }
 
-module.exports = {create, index}
+function show(req, res, next) {
+  const id = req.params.id;
+  User.show(id).then(user => res.json(user))
+}
+
+module.exports = {create, index, show}

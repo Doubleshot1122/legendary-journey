@@ -11,6 +11,10 @@ function ResourceFactory(table) {
     static create(body){
       return db(table).insert(body).returning('*')
     }
+
+    static show(id){
+      return db(table).where({id}).first()
+    }
   }
 
   return Resource;

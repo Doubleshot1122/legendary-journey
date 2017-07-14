@@ -36,15 +36,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const index = require('./routes/index');
 const users = require('./routes/users');
+const quests = require('./routes/quests');
+const skills = require('./routes/skills');
 // const dashboard = require('./routes/dashboard');
-// const quests = require('../routes/quests');
-// const skills = require('../routes/skills');
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/quests', quests);
+app.use('/skills', skills);
 // app.use('/dashboard', dashboard);
-// app.use('/quests', quests);
-// app.use('/skills', skills);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
