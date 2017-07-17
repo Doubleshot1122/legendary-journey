@@ -1,3 +1,28 @@
+html{
+  background-color: #73CEF5;
+}
+
+progress[value]{
+  -webkit-appearance: none;
+  appearance: none;
+  /*width: 250px;*/
+  height: 20px;
+}
+
+progress[value]::-webkit-progress-bar{
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+.nav-wrapper {
+  background-color: #1D70A2
+}
+
+.nav-wrapper li {
+  color: #73CEF5
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -8,10 +33,26 @@ a {
 }
 
 #logo{
+  margin-top: 8px;
+  margin-left: 10px;
   height: 50px;
 }
 
-.profile{
-  height: 200px;
-  width: 200px;
+#bigProfile{
+  height: 400px;
+  width: 400px;
+}
+
+#tinyProfile {
+  margin-top: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+.collapsible-header{
+  background-color: #1D70A2;
+}
+
+.collapsible-header span{
+  color: white;
 }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Legendary Journey</title>
+
+    <!--favicon-->
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link rel='stylesheet' href='./stylesheets/style.css' />
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="./javascripts/app.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo"><img id="logo" src="./images/legendary_logo.png" alt=""></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#">Quests</a></li>
+                <li><a href="#">Levels</a></li>
+                <li><a href="#">Donny
+                  <img id="tinyProfile"  src="http://vignette3.wikia.nocookie.net/southpark/images/3/3c/Kenny.png/revision/latest?cb=20120418021150" alt="">
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row center-align">
+        <div class="col l4">
+          <br>
+            <p><b>Company Contribution</b></p>
+            <div id="chart_div"></div>
+        </div>
+        <div class="col l4">
+            <br>
+            <img id="bigProfile" src="http://vignette3.wikia.nocookie.net/southpark/images/3/3c/Kenny.png/revision/latest?cb=20120418021150" alt="">
+            <h2>Team:</h2>
+            <h4><b>g48 - Reid</b></h4>
+        </div>
+        <div class="col l1">
+
+        </div>
+        <div class="col l2">
+            <div class="row">
+              <br>
+                <p><b>Levels</b></p>
+                <ul class="collapsible levels" data-collapsible="expandable">
+                    <li>
+                        <div class="collapsible-header background"><b class="material-icons">JavaScript<span class="badge">5</span></b>
+                          <progress value="50" max="100">
+                          </progress>
+                          </div>
+                        <div class="collapsible-body"><span></span></div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header"><b class="material-icons">Bash<span class="new badge green">3</span></b>
+                          <progress value="1" max="100"></progress>
+                        </div>
+                      <div class="collapsible-body"><span></span></div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header"><b class="material-icons">HTML5<span class="badge">1</span></b>
+                          <progress value="20" max="100"></progress>
+                        </div>
+                      <div class="collapsible-body"><span></span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
