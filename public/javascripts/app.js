@@ -28,9 +28,9 @@
                  'pieSliceTextStyle':{'color': 'black', 'fontSize': '18'},
                   'width':435,
                   'height':400,
-                  'legend':'bottom',
+                  'legend':'none',
                   'pieSliceText': 'percentage',
-                 'is3D':true,
+                 'is3D':false,
                   'slices':{
                      0: {'color': 'transparent',
                         'textStyle': {'color': '#73CEF5'}},

@@ -56,3 +56,7 @@ a {
 .collapsible-header span{
   color: white;
 }
+
+.collapsible-body{
+  background-color: white;
+}
