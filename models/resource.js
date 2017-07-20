@@ -1,4 +1,4 @@
-const db = require('../db/connections.js')
+const db = require('../db/connections.js');
 
 function ResourceFactory(table) {
   class Resource {

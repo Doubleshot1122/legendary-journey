@@ -2,30 +2,40 @@ html{
   background-color: #73CEF5;
 }
 
+body {
+  padding: 50px;
+  padding-top: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
 progress[value]{
   -webkit-appearance: none;
   appearance: none;
-  /*width: 250px;*/
+  width: 80%;
   height: 20px;
 }
 
+progress[value]::-webkit-progress-value {
+  background: rgb(25, 230, 40);
+}
+
 progress[value]::-webkit-progress-bar{
+  color: blue;
   background-color: #eee;
   border-radius: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }
 
+nav {
+  position: relative;
+}
+
 .nav-wrapper {
-  background-color: #1D70A2
+  background-color: #1D70A2;
 }
 
 .nav-wrapper li {
   color: #73CEF5
-}
-
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -59,4 +69,15 @@ a {
 
 .collapsible-body{
   background-color: white;
+  display: block;
+}
+
+.material-icons{
+  margin-left: 15%;
+  float: left;
+}
+
+.badge {
+  margin-right: 10%;
+  float: right;
 }

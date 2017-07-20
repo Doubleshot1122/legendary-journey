@@ -30,10 +30,12 @@
                   'height':400,
                   'legend':'none',
                   'pieSliceText': 'percentage',
-                 'is3D':false,
+                 'is3D': false,
                   'slices':{
                      0: {'color': 'transparent',
-                        'textStyle': {'color': '#73CEF5'}},
+                        'textStyle': {'color': 'transparent'},
+                        // 'offset': 0.05
+                      },
                   }
    };
 

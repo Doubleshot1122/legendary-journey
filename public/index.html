@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 
 <head>
     <title>Legendary Journey</title>
@@ -7,93 +7,27 @@
     <!--favicon-->
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <base href="/">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
-    <link rel='stylesheet' href='./stylesheets/style.css' />
-    <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
-    <script type="text/javascript" src="./javascripts/app.js"></script>
+    <link rel="stylesheet" href="./stylesheets/style.css">
 </head>
 
-<body>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo"><img id="logo" src="./images/legendary_logo.png" alt=""></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#">Quests</a></li>
-                <li><a href="#">Levels</a></li>
-                <li><a href="#">Donny
-                  <img id="tinyProfile"  src="https://www.awicons.com/free-icons/download/application-icons/dragon-soft-icons-by-artua.com/png/512/User.png" alt="">
-                </a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="row center-align">
-        <div class="col l4">
-          <br>
-            <h4><b>Company Contribution</b></h4>
-            <div id="chart_div"></div>
-            <p><b>Current contribution percentage 28.5%</b></p>
-        </div>
-        <div class="col l4">
-            <br>
-            <img id="bigProfile" src="https://www.awicons.com/free-icons/download/application-icons/dragon-soft-icons-by-artua.com/png/512/User.png" alt="">
-            <h2>Team:</h2>
-            <h4><b>g48 - Reid</b></h4>
-        </div>
-        <div class="col l1">
+  <body>
+      <ui-view></ui-view>
 
-        </div>
-        <div class="col l2">
-            <div class="row">
-              <br>
-                <h4><b>Levels</b></h4>
-                <ul class="collapsible levels" data-collapsible="expandable">
-                    <li>
-                        <div class="collapsible-header background"><b class="material-icons">JavaScript<span class="badge">5</span></b>
-                          <progress value="50" max="100">
-                          </progress>
-                          </div>
-                        <div class="collapsible-body"><span>
-                          <table class="">
-                            <tr>
-                              <td><a href="#" data-qid="" data-skill="javascript">Main</a></td>
-                              <td>20,000 XP</td>
-                            </tr>
-                            <tr>
-                              <td><a href="#" data-skill="javascript">Main</a></td>
-                              <td>20,000 XP</td>
-                            </tr>
-                            <tr>
-                              <td><a href="#" data-skill="javascript">Main</a></td>
-                              <td>20,000 XP</td>
-                            </tr>
-                            <tr>
-                              <td><a href="#" data-skill="javascript">Main</a></td>
-                              <td>20,000 XP</td>
-                            </tr>
-                          </table>
-                        </span></div>
-                    </li>
-                    <li>
-                      <div class="collapsible-header"><b class="material-icons">Bash<span class="new badge green">3</span></b>
-                          <progress value="1" max="100"></progress>
-                        </div>
-                      <div class="collapsible-body"><span></span></div>
-                    </li>
-                    <li>
-                      <div class="collapsible-header"><b class="material-icons">HTML5<span class="badge">1</span></b>
-                          <progress value="20" max="100"></progress>
-                        </div>
-                      <div class="collapsible-body"><span></span></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</body>
+      <!--Load the AJAX API-->
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angular-ui-router/1.0.0-rc.1/angular-ui-router.min.js"></script>
+      <script src="./javascripts/app.js"></script>
+      <script src="./javascripts/app/app.modules.js"></script>
+      <script src="./javascripts/app/app.config.js"></script>
+      <script src="./javascripts/app/app.component.js"></script>
+      <script src="./javascripts/dashboard/dashboard-show.component.js"></script>
+  </body>
 
 </html>
