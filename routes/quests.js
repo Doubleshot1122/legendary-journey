@@ -4,6 +4,7 @@ const ctrl = require('../controllers/quests.js');
 
 router.get('/', ctrl.index);
 // router.post('/new', ctrl.create);
+router.get('/stories', ctrl.showStories);
 router.get('/:id', ctrl.show);
 
 module.exports = router;

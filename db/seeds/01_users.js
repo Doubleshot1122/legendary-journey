@@ -3,22 +3,24 @@ exports.seed = function(knex) {
     .then(() => {
       return knex('users').insert([
         {
-            user_name: 'Bulldog',
+            user_name: 'ricksanchez3',
             first_name: 'Rick',
             last_name: 'Sanchez',
-            email: 'rick@c137.com',
+            email: 'rick_sanchez@dr.com',
             hashed_password: '$2a$12$C9AYYmcLVGYlGoO4vSZTPud9ArJwbGRsJ6TUsNULzR48z8fOnTXbS',
             avatar_url: 'http://www.pngall.com/wp-content/uploads/2016/05/Man-PNG-File.png',
-            team_id: 1
+            team_id: 1,
+            api_token: 'db82fcf8ef077c60859be505792891a1'
         },
         {
-            user_name: 'EyePatch',
+            user_name: 'mortysmith',
             first_name: 'Morty',
             last_name: 'Smith',
-            email: 'morty@c137.com',
+            email: 'morty_smith@dr.com',
             hashed_password: '$2a$12$C9AYYmcLVGYlGoO4vSZTPud9ArJwbGRsJ6TUsNULzR48z8fOnTXbS',
             avatar_url: 'http://www.pngall.com/wp-content/uploads/2016/05/Man-Download-PNG.png',
-            team_id: 1
+            team_id: 1,
+            api_token: 'e4b49703e55334df9294e8e956791d8c'
         },
         {
             user_name: 'loser5',

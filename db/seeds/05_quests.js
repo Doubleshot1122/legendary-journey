@@ -8,7 +8,8 @@ exports.seed = function(knex) {
             description: "This is the desc for project 1",
             xp_amount: 10000,
             project_name: "Main Initiative 1",
-            project_id: 2076033,
+            owner_id: 1,
+            pivotal_project_id: 2076033,
             story_id: 148637593
 
         },
@@ -18,7 +19,8 @@ exports.seed = function(knex) {
             description: "DESC-2",
             xp_amount: 20000,
             project_name: "Main Initiative 1",
-            project_id: 2076033,
+            owner_id: 2,
+            pivotal_project_id: 2076033,
             story_id: 148637619
 
         },
@@ -28,7 +30,8 @@ exports.seed = function(knex) {
             description: "cut costs and make more money",
             xp_amount: 30000,
             project_name: "Synergy",
-            project_id: 2076039,
+            owner_id: 1,
+            pivotal_project_id: 2076039,
             story_id: 148637691
 
         }
