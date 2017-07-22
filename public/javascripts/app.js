@@ -4,6 +4,13 @@
  // Set a callback to run when the Google Visualization API is loaded.
  google.charts.setOnLoadCallback(drawChart);
 
+
+ let projects = [
+   ['All Projects', 3],
+   ['Synergy', 1],
+   ['Initative 1', 1]
+ ]
+
  // Callback that creates and populates a data table,
  // instantiates the pie chart, passes in the data and
  // draws it.
@@ -13,12 +20,7 @@
    var data = new google.visualization.DataTable();
    data.addColumn('string', 'Projects');
    data.addColumn('number', 'Slices');
-   data.addRows([
-     ['All Projects', 20],
-     ['Synergy', 3],
-     ['Grow Sales', 2],
-     ['Initative 1', 3]
-   ]);
+   data.addRows(projects);
 
    var contribution = Math.round(((8/28)*100));
    // Set chart options

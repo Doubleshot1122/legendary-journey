@@ -10,8 +10,11 @@ function show(req, res, next) {
 }
 
 function showStories(req, res, next) {
-  console.log("===Controller====");
   Quest.showStories().then(stories => res.json(stories))
 }
 
-module.exports = {index, show, showStories}
+function showProjects(req, res, next) {
+  Quest.showProjects().then(projects => res.json(projects))
+}
+
+module.exports = {index, show, showStories, showProjects}

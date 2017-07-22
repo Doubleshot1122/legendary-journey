@@ -19,6 +19,10 @@ class Quests extends Resource {
       return results
     })
   }
+
+  static showProjects(){
+    
+  }
 }
 
 
