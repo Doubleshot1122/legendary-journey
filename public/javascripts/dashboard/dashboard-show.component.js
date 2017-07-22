@@ -11,6 +11,14 @@
   controller.$inject = ['$http']
   function controller($http) {
     const vm = this
+
+    vm.$onInit = onInit
+
+
+    function onInit() {
+      $http.get('/api/dashboard/1')
+        .then(response => vm.userData = response.data)
+    }
   }
 
 }())

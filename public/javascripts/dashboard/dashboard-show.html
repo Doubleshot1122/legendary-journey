@@ -11,9 +11,11 @@
     <div class="col m4">
         <br>
         <br>
-        <img id="bigProfile" src="https://www.awicons.com/free-icons/download/application-icons/dragon-soft-icons-by-artua.com/png/512/User.png" alt="">
-        <h2>Team:</h2>
-        <h4><b>g48 - Reid</b></h4>
+        <!-- <img id="bigProfile" src="https://www.awicons.com/free-icons/download/application-icons/dragon-soft-icons-by-artua.com/png/512/User.png" alt=""> -->
+        <img id="bigProfile" ng-src="{{$ctrl.userData.avatar_url}}" alt="">
+        <br>
+        <h4>{{$ctrl.userData.first_name}} {{$ctrl.userData.last_name}}</h4>
+        <h4><b>{{$ctrl.userData.team_name}}</b></h4>
     </div>
     <div class="col m1">
 
@@ -23,17 +25,17 @@
           <br>
             <h4><b>Levels</b></h4>
             <ul class="collapsible levels" data-collapsible="expandable">
-                <li>
+                <li ng-repeat="skill in $ctrl.userData.skills">
                     <div ng-click="showLevelDetails=!showLevelDetails" class="collapsible-header background"><b
-                      class="material-icons">JavaScript</b><span class="badge">5</span>
+                      class="material-icons">{{skill.name}}</b><span class="badge">{{skill.level}}</span>
                       <br>
-                      <progress value="50" max="100"></progress>
+                      <progress value="{{skill.xp_gained}}" max="{{skill.level_cap}}"></progress>
                     </div>
                     <div ng-if="showLevelDetails" class="collapsible-body"><span>
                       <table>
-                        <tr>
-                          <td><a href="#" data-qid="" data-skill="javascript">Main</a></td>
-                          <td>20,000 XP</td>
+                        <tr ng-repeat="quest in skill.quests">
+                          <td><a href="#" data-qid="{{quest.qID}}" data-skill="javascript">{{quest.qName}}</a></td>
+                          <td>{{quest.xp_amount}}</td>
                         </tr>
                       </table>
                     </span></div>
