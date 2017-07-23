@@ -1,15 +1,42 @@
-// Load the Visualization API and the corechart package.
- google.charts.load('current', {'packages':['corechart']});
+(function(){
+$.ajax({
+  url:'/api/quests',
+  method: 'GET'
+}).then(function(result) {
+  contributionTotal(result, 1)
+})
 
- // Set a callback to run when the Google Visualization API is loaded.
- google.charts.setOnLoadCallback(drawChart);
+function contributionTotal(projects, ownerID) {
+            let projectsFormatted = []
+            let projectObj = {
+                'All Other Projects': 0
+            }
+            projects.forEach(proj => {
+                if (proj.type === 'Main') {
+                    if (proj.owner_id === ownerID) {
+                        if (projectObj[proj.name]) {
+                            projectObj[proj.name]++
+                        } else {
+                            projectObj[proj.name] = 1
+                        }
+                    } else {
+                        projectObj['All Other Projects']++
+                    }
+                }
+            })
 
+            for (proType in projectObj) {
+                let subArray = []
+                subArray[0] = proType
+                subArray[1] = parseInt(`${projectObj[proType]}`)
+                projectsFormatted.push(subArray)
+            }
 
- let projects = [
-   ['All Projects', 3],
-   ['Synergy', 1],
-   ['Initative 1', 1]
- ]
+ // Load the Visualization API and the corechart package.
+  google.charts.load('current', {'packages':['corechart']});
+
+  // Set a callback to run when the Google Visualization API is loaded.
+  google.charts.setOnLoadCallback(drawChart);
 
  // Callback that creates and populates a data table,
  // instantiates the pie chart, passes in the data and
@@ -17,14 +44,14 @@
  function drawChart() {
 
    // Create the data table.
-   var data = new google.visualization.DataTable();
+   let data = new google.visualization.DataTable();
    data.addColumn('string', 'Projects');
    data.addColumn('number', 'Slices');
-   data.addRows(projects);
+   data.addRows(projectsFormatted);
 
-   var contribution = Math.round(((8/28)*100));
+   let contribution = Math.round(((8/28)*100));
    // Set chart options
-   var options = {
+   let options = {
                 'chartArea': {width: '100%', height: '90%'},
                  'backgroundColor': 'transparent',
                  'pieSliceTextStyle':{'color': 'black', 'fontSize': '18'},
@@ -42,6 +69,9 @@
    };
 
    // Instantiate and draw our chart, passing in some options.
-   var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+   let chart = new google.visualization.PieChart(document.getElementById('chart_div'));
    chart.draw(data, options);
  }
+
+ }
+ })();
