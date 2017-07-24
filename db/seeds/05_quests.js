@@ -33,7 +33,22 @@ exports.seed = function(knex) {
             owner_id: 1,
             pivotal_project_id: 2076039,
             story_id: 148637691
-
+        },
+        {
+            type: "Main",
+            name: "Make even more of money",
+            description: "cut costs and make more money",
+            xp_amount: 30000,
+            project_name: "Synergy-2",
+            owner_id: 1,
+        },
+        {
+            type: "Main",
+            name: "Don't lose money",
+            description: "cut costs and make more money",
+            xp_amount: 30000,
+            project_name: "Synergy-3",
+            owner_id: 2,
         }
       ]);
     })

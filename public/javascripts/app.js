@@ -1,8 +1,10 @@
-(function(){
+(function loadChart(){
 $.ajax({
   url:'/api/quests',
   method: 'GET'
 }).then(function(result) {
+  let id = $('#userName').data('uid')
+  console.log(id);
   contributionTotal(result, 1)
 })
 
@@ -74,4 +76,4 @@ function contributionTotal(projects, ownerID) {
  }
 
  }
- })();
+})();

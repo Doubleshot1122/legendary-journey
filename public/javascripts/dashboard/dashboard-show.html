@@ -14,7 +14,7 @@
         <!-- <img id="bigProfile" src="https://www.awicons.com/free-icons/download/application-icons/dragon-soft-icons-by-artua.com/png/512/User.png" alt=""> -->
         <img id="bigProfile" ng-src="{{$ctrl.userData.avatar_url}}" alt="">
         <br>
-        <h4>{{$ctrl.userData.first_name}} {{$ctrl.userData.last_name}}</h4>
+        <h4 id='userName' data-uid="{{$ctrl.userData.id}}">{{$ctrl.userData.first_name}} {{$ctrl.userData.last_name}}</h4>
         <h4><b>{{$ctrl.userData.team_name}}</b></h4>
     </div>
     <div class="col m1">
@@ -34,7 +34,7 @@
                     <div ng-if="showLevelDetails" class="collapsible-body"><span>
                       <table>
                         <tr ng-repeat="quest in skill.quests">
-                          <td><a href="#" data-qid="{{quest.qID}}" data-skill="javascript">{{quest.qName}}</a></td>
+                          <td><a ui-sref="quests" data-qid="{{quest.qID}}" data-skill="javascript">{{quest.qName}}</a></td>
                           <td>{{quest.xp_amount}}</td>
                         </tr>
                       </table>
