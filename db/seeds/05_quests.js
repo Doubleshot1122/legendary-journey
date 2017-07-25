@@ -10,7 +10,8 @@ exports.seed = function(knex) {
             project_name: "Main Initiative 1",
             owner_id: 1,
             pivotal_project_id: 2076033,
-            story_id: 148637593
+            story_id: 148637593,
+            complete: false
 
         },
         {
@@ -21,7 +22,8 @@ exports.seed = function(knex) {
             project_name: "Main Initiative 1",
             owner_id: 2,
             pivotal_project_id: 2076033,
-            story_id: 148637619
+            story_id: 148637619,
+            complete: false
 
         },
         {
@@ -32,7 +34,8 @@ exports.seed = function(knex) {
             project_name: "Synergy",
             owner_id: 1,
             pivotal_project_id: 2076039,
-            story_id: 148637691
+            story_id: 148637691,
+            complete: false
         },
         {
             type: "Main",
@@ -41,6 +44,7 @@ exports.seed = function(knex) {
             xp_amount: 30000,
             project_name: "Synergy-2",
             owner_id: 1,
+            complete: false
         },
         {
             type: "Main",
@@ -49,6 +53,7 @@ exports.seed = function(knex) {
             xp_amount: 30000,
             project_name: "Synergy-3",
             owner_id: 2,
+            complete: false
         }
       ]);
     })

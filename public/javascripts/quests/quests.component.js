@@ -5,9 +5,9 @@
             controller: controller
         })
 
-    controller.$inject = ['$http'];
+    controller.$inject = ['$http', 'UserService'];
 
-    function controller($http) {
+    function controller($http, UserService) {
         const vm = this
 
         vm.$onInit = onInit
@@ -15,8 +15,14 @@
         function onInit() {
           $http.get('/api/quests')
             .then(response => {
-              console.log(response);
-              vm.userData = response.data
+              console.log("---hi---");
+              console.log("-UserService-", UserService.user.id);
+              console.log(response.data);
+              vm.userData = response.data.filter(el => {
+                if (el.owner_id === UserService.user.id) {
+                  return true
+                }
+              })
             })
         }
 

@@ -9,8 +9,19 @@
         <th>Name</th>
         <th>XP Amount</th>
         <th>Project</th>
+        <th>Status</th>
       </thead>
+      <tbody>
+        <tr ng-repeat="quest in $ctrl.userData">
+          <td>{{quest.type}}</td>
+          <td>{{quest.name}}</td>
+          <td>{{quest.xp_amount}}</td>
+          <td>{{quest.project_name}}</td>
+          <td>{{quest.complete}}</td>
+        </tr>
+      </tbody>
     </table>
+    <p>{{$ctrl.userData}}</p>
   </div>
   <div class="col m1"></div>
 </div>
