@@ -9,10 +9,20 @@ class DataSync {
   constructor() {}
 
   static stories(proj_id){
-    // let proj_id = 2076033
     return rp({
       method: 'GET',
       uri: `${BASE_URL}/projects/${proj_id}/stories`,
+      headers: {'X-TrackerToken': 'fb0ff656b12bf40cee14581a7854f840'},
+      json:true
+    }).then(results => {
+      return results
+    })
+  }
+
+  static tasks(proj_id, story_id){
+    return rp({
+      method: 'GET',
+      uri: `${BASE_URL}/projects/${proj_id}/stories/${story_id}/tasks`,
       headers: {'X-TrackerToken': 'fb0ff656b12bf40cee14581a7854f840'},
       json:true
     }).then(results => {
@@ -78,22 +88,30 @@ class DataSync {
                   story_id: piv_stories[0].id,
                   complete: helper.calculateProjectStatus(piv_stories[0].current_status)
                 }
+                let tasks_toLoad = {
+                  
+                }
                 let skill_quest_toLoad = {}
                 if (localProjectNums.includes(pivotalProjectNum)) {
-                  let qid = questIDs[piv_stories[0].id]
-                  Quest.update(qid, quests_toLoad).then(updatedQuest => console.log("===UPDATED===", updatedQuest));
-                  console.log("qid", qid);
-                  console.log('>>>>>>>>>>>>NOT NEW<<<<<<<<<<<<<<<<');
-                  console.log(quests_toLoad);
+                  if (localStoryNums.includes(pivotalStoryNum)) {
+                    let qid = questIDs[piv_stories[0].id]
+                    Quest.update(qid, quests_toLoad).then(updatedQuest => {
+                      console.log("===Project/Stories both exsist===", updatedQuest)
+                    });
+                  }else {
+                    Quest.create(quests_toLoad).then(newQuest => {
+                      console.log("===Project Exist but not Stories====", newQuest[0].id)
+                    });
+                  }
+
                 } else {
-                  Quest.create(quests_toLoad).then(newQuest => console.log("LOADED", newQuest));
-                  console.log('<<<<<<New>>>>>>>');
-                  console.log(quests_toLoad);
-                  console.log('<<<<<<New>>>>>>>');
+                  Quest.create(quests_toLoad).then(newQuest => {
+                    console.log(">>>Projects and Stories are new===", newQuest[0].id)
+                  });
                 }
 
 
-                console.log("piv_stories[0].owner_ids", piv_stories[0].owner_ids);
+                // console.log("piv_stories[0].owner_ids", piv_stories[0].owner_ids);
 
               })
               piv_stories.shift()
