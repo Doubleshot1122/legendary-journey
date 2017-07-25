@@ -36,7 +36,7 @@ app.use('/api/users', users);
 app.use('/api/quests', quests);
 app.use('/api/skills', skills);
 app.use('/api/dashboard', dashboard);
-// app.use('/api/datasync', datasync);
+app.use('/api/datasync', datasync);
 app.use('*', function(req, res, next) {
   res.sendFile('index.html', {root: path.join(__dirname, 'public')})
 })
