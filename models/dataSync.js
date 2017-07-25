@@ -56,10 +56,17 @@ class DataSync {
                 //array of local already loaded pivotal story ids
                 let localStoryNums = questQuery.map(el => el.story_id)
 
-                //
+                //object of user table ids and thier pivotal id match
                 let localUserIDs = userQuery.reduce((output, user) => {
                   output[user.pivotal_user_id] = user.id
                   return output},{})
+
+                //object of quest id and pivotal story id match
+                let questIDs = questQuery.reduce((output, quest) => {
+                  output[quest.story_id] = quest.id
+                  return output},{})
+
+                //new and update quest table object
                 let quests_toLoad = {
                   type: 'Main',
                   name: piv_stories[0].name,
@@ -68,21 +75,24 @@ class DataSync {
                   project_name: pivProjNames[piv_stories[0].project_id],
                   owner_id: localUserIDs[piv_stories[0].owner_ids[0]],
                   pivotal_project_id: piv_stories[0].project_id,
-                  story_id: piv_stories[0].id
+                  story_id: piv_stories[0].id,
+                  complete: helper.calculateProjectStatus(piv_stories[0].current_status)
                 }
                 let skill_quest_toLoad = {}
                 if (localProjectNums.includes(pivotalProjectNum)) {
-                  let questID = [pivotalStoryNum.id]
+                  let qid = questIDs[piv_stories[0].id]
+                  console.log("qid", qid);
                   console.log('>>>>>>>>>>>>NOT NEW<<<<<<<<<<<<<<<<');
                   console.log(quests_toLoad);
                 } else {
-
+                  Quest.create(quests_toLoad).then(newQuest => console.log("LOADED", newQuest));
                   console.log('<<<<<<New>>>>>>>');
                   console.log(quests_toLoad);
                   console.log('<<<<<<New>>>>>>>');
                 }
 
-                console.log("piv_stories", piv_stories);
+
+                console.log("piv_stories[0].owner_ids", piv_stories[0].owner_ids);
 
               })
               piv_stories.shift()

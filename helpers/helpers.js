@@ -10,4 +10,12 @@ function calculateXPfromEstimate(estimate) {
   }
 }
 
-module.exports = {calculateXPfromEstimate}
+function calculateProjectStatus(status) {
+  if (status === 'finished') {
+    return true
+  }else {
+    return false
+  }
+}
+
+module.exports = {calculateXPfromEstimate, calculateProjectStatus}
