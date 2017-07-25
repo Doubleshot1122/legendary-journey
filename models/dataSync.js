@@ -81,6 +81,7 @@ class DataSync {
                 let skill_quest_toLoad = {}
                 if (localProjectNums.includes(pivotalProjectNum)) {
                   let qid = questIDs[piv_stories[0].id]
+                  Quest.update(qid, quests_toLoad).then(updatedQuest => console.log("===UPDATED===", updatedQuest));
                   console.log("qid", qid);
                   console.log('>>>>>>>>>>>>NOT NEW<<<<<<<<<<<<<<<<');
                   console.log(quests_toLoad);

@@ -15,6 +15,10 @@ function ResourceFactory(table) {
     static show(id){
       return db(table).where({id}).first()
     }
+
+    static update(id, body){
+      return db(table).update(body, '*').where({id})
+    }
   }
 
   return Resource;
