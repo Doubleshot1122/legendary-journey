@@ -10,14 +10,14 @@
     $locationProvider.html5Mode(true)
 
     $stateProvider
-      .state({
-        name: "home",
-        url: "/",
-        component: "home"
-      })
+      // .state({
+      //   name: "home",
+      //   url: "/",
+      //   component: "home"
+      // })
       .state({
         name: "dashboard",
-        url: "/dashboard",
+        url: "/",
         component: "dashboard"
       })
       .state({
