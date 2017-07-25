@@ -1,10 +1,7 @@
-(function functionName() {
+(function() {
     angular.module('app')
         .component('dashboard', {
-            require: {
-                layout: '^app'
-            },
-            templateUrl: '/javascripts/dashboard/dashboard-show.html',
+            templateUrl: './javascripts/dashboard/dashboard-show.html',
             controller: controller
         })
 
@@ -14,20 +11,10 @@
         const vm = this
 
         vm.$onInit = onInit
-        // vm.$contributionTotal = contributionTotal
-        // vm.$googleChart = googleChart
 
         function onInit() {
             $http.get('/api/dashboard/1')
                 .then(response => vm.userData = response.data)
-
-            // $http.get('/api/quests')
-            //     .then(response => {
-            //       vm.chartOptions = {
-            //         chartType: 'PieChart',
-            //         dataTable: contributionTotal(response.data, 1)
-            //       }
-            //     })
         }
 
 
@@ -63,4 +50,4 @@
 
     }
 
-}())
+})();

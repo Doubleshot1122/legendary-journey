@@ -11,22 +11,22 @@
 
     $stateProvider
       .state({
-        name: 'app',
-        abstract: true,
-        component: 'app',
+        name: "home",
+        url: "/",
+        component: "home"
       })
       .state({
-        name: 'dashboard',
-        parent: 'app',
-        url: '/',
-        component: 'dashboard',
+        name: "dashboard",
+        url: "/dashboard",
+        component: "dashboard"
       })
       .state({
-        name: 'quests',
-        parent: 'app',
-        url: '/quests',
-        component: 'quests',
-      })
+        name: "quests",
+        url: "/quests",
+        component: "quests"
+      });
+
+      $urlRouterProvider.otherwise("/");
   }
 
 }());

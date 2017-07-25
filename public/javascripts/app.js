@@ -4,7 +4,7 @@ $.ajax({
   method: 'GET'
 }).then(function(result) {
   let id = $('#userName').data('uid')
-  console.log(id);
+  // console.log(id);
   contributionTotal(result, 1)
 })
 

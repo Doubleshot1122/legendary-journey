@@ -1,14 +1,11 @@
 (function functionName() {
     angular.module('app')
         .component('quests', {
-            require: {
-                layout: '^app'
-            },
-            templateUrl: '/javascripts/quests/quests.html',
+            templateUrl: './javascripts/quests/quests.html',
             controller: controller
         })
 
-    controller.$inject = ['$http']
+    controller.$inject = ['$http'];
 
     function controller($http) {
         const vm = this
@@ -16,7 +13,11 @@
         vm.$onInit = onInit
 
         function onInit() {
-        
+          $http.get('/api/quests')
+            .then(response => {
+              console.log(response);
+              vm.userData = response.data
+            })
         }
 
 }}())
