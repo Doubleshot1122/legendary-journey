@@ -10,7 +10,8 @@ exports.seed = function(knex) {
             hashed_password: '$2a$12$C9AYYmcLVGYlGoO4vSZTPud9ArJwbGRsJ6TUsNULzR48z8fOnTXbS',
             avatar_url: 'http://www.pngall.com/wp-content/uploads/2016/05/Man-PNG-File.png',
             team_id: 1,
-            api_token: 'db82fcf8ef077c60859be505792891a1'
+            api_token: 'db82fcf8ef077c60859be505792891a1',
+            pivotal_user_id: 2952887
         },
         {
             user_name: 'mortysmith',
@@ -20,7 +21,8 @@ exports.seed = function(knex) {
             hashed_password: '$2a$12$C9AYYmcLVGYlGoO4vSZTPud9ArJwbGRsJ6TUsNULzR48z8fOnTXbS',
             avatar_url: 'http://www.pngall.com/wp-content/uploads/2016/05/Man-Download-PNG.png',
             team_id: 1,
-            api_token: 'e4b49703e55334df9294e8e956791d8c'
+            api_token: 'e4b49703e55334df9294e8e956791d8c',
+            pivotal_user_id: 2952891
         },
         {
             user_name: 'loser5',

@@ -8,7 +8,8 @@ exports.up = (knex) => {
     table.specificType('hashed_password', 'char(60)').notNullable();
     table.text('avatar_url').notNullable()
     table.integer('team_id')
-    table.text('api_token')
+    table.text('api_token'),
+    table.integer('pivotal_user_id')
     table.timestamps(true, true)
   })
 }

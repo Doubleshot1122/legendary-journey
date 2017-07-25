@@ -9,6 +9,7 @@ exports.up = (knex) => {
     table.integer('owner_id')
     table.integer('pivotal_project_id')
     table.integer('story_id')
+    table.bool('complete')
     table.timestamps(true, true)
   })
 }
