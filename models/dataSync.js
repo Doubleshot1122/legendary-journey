@@ -89,7 +89,7 @@ class DataSync {
                   complete: helper.calculateProjectStatus(piv_stories[0].current_status)
                 }
                 let tasks_toLoad = {
-                  
+
                 }
                 let skill_quest_toLoad = {}
                 if (localProjectNums.includes(pivotalProjectNum)) {

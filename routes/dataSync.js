@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const ctrl = require('../controllers/dataSync.js');
+const ctrl = require('../controllers/datasync.js');
 
 router.get('/stories', ctrl.stories);
 
