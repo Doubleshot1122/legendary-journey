@@ -1,14 +1,8 @@
-// if (process.env.NODE_ENV !== 'production' && !process.env.IS_BUILD) {
-//   require('dotenv').config();
-// }
-
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
-// const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-// const cookieSession = require('cookie-session');
 
 const app = express();
 app.disable('x-powered-by');
@@ -17,12 +11,6 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(cookieParser());
-// app.use(cookieSession({
-//   name: 'legendary-journey',
-//   secret: process.env.SESSION_SECRET,
-//   secure: app.get('env') === 'production'
-// }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -30,13 +18,14 @@ const users = require('./routes/users');
 const quests = require('./routes/quests');
 const skills = require('./routes/skills');
 const dashboard = require('./routes/dashboard');
-const datasync = require('./routes/datasync');
+const dataSync = require('./routes/dataSync');
 
 app.use('/api/users', users);
 app.use('/api/quests', quests);
 app.use('/api/skills', skills);
 app.use('/api/dashboard', dashboard);
-app.use('/api/datasync', datasync);
+app.use('/api/dataSync', dataSync);
+
 app.use('*', function(req, res, next) {
   res.sendFile('index.html', {root: path.join(__dirname, 'public')})
 })

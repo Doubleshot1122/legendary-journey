@@ -1,4 +1,4 @@
-const DataSync = require('../models/datasync.js');
+const DataSync = require('../models/dataSync.js');
 
 function stories(req, res, next) {
   DataSync.projects()
