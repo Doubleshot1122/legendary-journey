@@ -1,7 +1,7 @@
 (function() {
     angular.module('app')
         .component('dashboard', {
-            templateUrl: './javascripts/dashboard/dashboard-show.html',
+            templateUrl: './javascripts/dashboard/dashboard.html',
             controller: controller
         })
 

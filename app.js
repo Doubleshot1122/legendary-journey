@@ -25,28 +25,21 @@ app.use(cookieSession({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// CSRF protection
-// app.use((req, res, next) => {
-//   if (/json/.test(req.get('Accept'))) {
-//     return next();
-//   }
-//
-//   res.sendStatus(406);
-// });
 
-const index = require('./routes/index');
 const users = require('./routes/users');
 const quests = require('./routes/quests');
 const skills = require('./routes/skills');
 const dashboard = require('./routes/dashboard');
 const datasync = require('./routes/datasync');
 
-app.use('/', index);
 app.use('/api/users', users);
 app.use('/api/quests', quests);
 app.use('/api/skills', skills);
 app.use('/api/dashboard', dashboard);
 app.use('/api/datasync', datasync);
+app.use('*', function(req, res, next) {
+  res.sendFile('index.html', {root: path.join(__dirname, 'public')})
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
