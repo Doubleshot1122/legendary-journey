@@ -1,5 +1,6 @@
 html{
-  background-color: #73CEF5;
+  background-color: #D3D3D3;
+  /*background-color: #73CEF5;*/
 }
 
 body {
@@ -31,15 +32,22 @@ nav {
 }
 
 .nav-wrapper {
-  background-color: #1D70A2;
+  background-color: #A4AFB9;
+  /*background-color: #1D70A2;*/
 }
 
 .nav-wrapper li {
   color: #73CEF5
 }
 
-a {
-  color: #00B7FF;
+.nav_links {
+  font-weight: bold;
+  color: red;
+}
+
+#redLink{
+  font-weight: bold;
+  color: red;
 }
 
 #logo{
@@ -53,18 +61,16 @@ a {
   width: 400px;
 }
 
-#tinyProfile {
-  margin-top: 10px;
-  height: 20px;
-  width: 20px;
-}
-
 .collapsible-header{
-  background-color: #1D70A2;
+  background-color: #969696;
+  font-size: 1.4rem;
 }
 
 .collapsible-header span{
-  color: white;
+  font-size: 1.1rem;
+  padding-top: 1.5px;
+  align-self: center;
+  color: black;
 }
 
 .collapsible-body{
@@ -80,4 +86,21 @@ a {
 .badge {
   margin-right: 10%;
   float: right;
+}
+
+nav ul a {
+  color: black;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.circle {
+  height: 25px !important;
+  width: 25px;
+
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: black;
+  color: white !important;
+  text-align: center;
 }

@@ -12,7 +12,6 @@
     <div class="col m4">
         <br>
         <br>
-        <!-- <img id="bigProfile" src="https://www.awicons.com/free-icons/download/application-icons/dragon-soft-icons-by-artua.com/png/512/User.png" alt=""> -->
         <img id="bigProfile" ng-src="{{$ctrl.userData.avatar_url}}" alt="">
         <br>
         <h4 id='userName' data-uid="{{$ctrl.userData.id}}">{{$ctrl.userData.first_name}} {{$ctrl.userData.last_name}}</h4>
@@ -28,7 +27,7 @@
             <ul class="collapsible levels" data-collapsible="expandable">
                 <li ng-repeat="skill in $ctrl.userData.skills">
                     <div ng-click="showLevelDetails=!showLevelDetails" class="collapsible-header background"><b
-                      class="material-icons">{{skill.name}}</b><span class="badge">{{skill.level}}</span>
+                      >{{skill.name}}</b><span class="badge circle">{{skill.level}}</span>
                       <br>
                       <progress value="{{skill.xp_gained}}" max="{{skill.level_cap}}"></progress>
                     </div>

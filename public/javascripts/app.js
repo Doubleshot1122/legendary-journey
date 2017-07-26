@@ -3,8 +3,6 @@ $.ajax({
   url:'/api/quests',
   method: 'GET'
 }).then(function(result) {
-  let id = $('#userName').data('uid')
-  // console.log(id);
   contributionTotal(result, 1)
 })
 
@@ -61,9 +59,9 @@ function contributionTotal(projects, ownerID) {
                   'height':400,
                   'legend':'none',
                   'pieSliceText': 'percentage',
-                 'is3D': false,
+                 'is3D': true,
                   'slices':{
-                     0: {'color': 'transparent',
+                     0: {'color': 'rgb(150, 149, 150)',
                         'textStyle': {'color': 'transparent'},
                         // 'offset': 0.05
                       },

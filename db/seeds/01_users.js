@@ -4,11 +4,11 @@ exports.seed = function(knex) {
       return knex('users').insert([
         {
             user_name: 'ricksanchez3',
-            first_name: 'Rick',
-            last_name: 'Sanchez',
+            first_name: 'Donny',
+            last_name: 'Barclay',
             email: 'rick_sanchez@dr.com',
             hashed_password: '$2a$12$C9AYYmcLVGYlGoO4vSZTPud9ArJwbGRsJ6TUsNULzR48z8fOnTXbS',
-            avatar_url: 'http://www.pngall.com/wp-content/uploads/2016/05/Man-PNG-File.png',
+            avatar_url: 'https://www.awicons.com/free-icons/download/application-icons/dragon-soft-icons-by-artua.com/png/512/User.png',
             team_id: 1,
             api_token: 'db82fcf8ef077c60859be505792891a1',
             pivotal_user_id: 2952887

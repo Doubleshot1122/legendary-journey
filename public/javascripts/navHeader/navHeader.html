@@ -1,11 +1,11 @@
 <div>
   <nav>
       <div class="nav-wrapper">
-          <a href="#" class="brand-logo"><img id="logo" src="./images/legendary_logo.png" alt=""></a>
+          <a ng-click="$ctrl.refreshDashboard()" class="brand-logo"><img id="logo" src="./images/legendary_logo.png" alt=""></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a ui-sref="quests">Quests</a></li>
-              <li><a ui-sref="dashboard">Dashboard</a></li>
-              <!-- <li><a href="/">Rick</a></li> -->
+              <li id="redLink" class="nav_links"><a ui-sref="quests">Quests</a></li>
+              <li class="nav_links"><a ui-sref="dashboard">Dashboard</a></li>
+              <li class="nav_links"><a ng-click="$ctrl.refreshData()" href="#"><i class="fa fa-superpowers" aria-hidden="true"></i></a></li>
           </ul>
       </div>
   </nav>

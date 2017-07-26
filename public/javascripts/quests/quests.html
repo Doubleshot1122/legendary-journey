@@ -5,14 +5,48 @@
     <br>
     <table>
       <thead>
-        <th>Type</th>
-        <th>Name</th>
-        <th>XP Amount</th>
-        <th>Project</th>
-        <th>Status</th>
+        <th>
+          <a href="#" ng-click="orderByField='type'; reverseSort = !reverseSort">Type
+              <span ng-show="orderByField == 'type'">
+                <span ng-show="!reverseSort"><i class="fa fa-sort-asc" aria-hidden="true"></i></span>
+                <span ng-show="reverseSort"><i class="fa fa-sort-desc" aria-hidden="true"></i></span>
+              </span>
+          </a>
+        </th>
+        <th>
+          <a href="#" ng-click="orderByField='name'; reverseSort = !reverseSort">Name
+            <span ng-show="orderByField == 'name'">
+              <span ng-show="!reverseSort"><i class="fa fa-sort-asc" aria-hidden="true"></i></span>
+              <span ng-show="reverseSort"><i class="fa fa-sort-desc" aria-hidden="true"></i></span>
+            </span>
+        </a></th>
+        <th>
+          <a href="#" ng-click="orderByField='xp_amount'; reverseSort = !reverseSort">XP Amount
+              <span ng-show="orderByField == 'xp_amount'">
+                <span ng-show="!reverseSort"><i class="fa fa-sort-asc" aria-hidden="true"></i></span>
+                <span ng-show="reverseSort"><i class="fa fa-sort-desc" aria-hidden="true"></i></span>
+              </span>
+          </a>
+        </th>
+        <th>
+          <a href="#" ng-click="orderByField='project'; reverseSort = !reverseSort">Project
+              <span ng-show="orderByField == 'project'">
+                <span ng-show="!reverseSort"><i class="fa fa-sort-asc" aria-hidden="true"></i></span>
+                <span ng-show="reverseSort"><i class="fa fa-sort-desc" aria-hidden="true"></i></span>
+              </span>
+          </a>
+        </th>
+        <th>
+          <a href="#" ng-click="orderByField='status'; reverseSort = !reverseSort">Status
+              <span ng-show="orderByField == 'status'">
+                <span ng-show="!reverseSort"><i class="fa fa-sort-asc" aria-hidden="true"></i></span>
+                <span ng-show="reverseSort"><i class="fa fa-sort-desc" aria-hidden="true"></i></span>
+              </span>
+          </a>
+        </th>
       </thead>
       <tbody>
-        <tr ng-repeat="quest in $ctrl.userData">
+        <tr ng-repeat="quest in $ctrl.userData | orderBy: orderByField:reverseSort">
           <td>{{quest.type}}</td>
           <td>{{quest.name}}</td>
           <td>{{quest.xp_amount}}</td>
@@ -21,7 +55,6 @@
         </tr>
       </tbody>
     </table>
-    <p>{{$ctrl.userData}}</p>
   </div>
   <div class="col m1"></div>
 </div>

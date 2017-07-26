@@ -15,9 +15,6 @@
         function onInit() {
           $http.get('/api/quests')
             .then(response => {
-              console.log("---hi---");
-              console.log("-UserService-", UserService.user.id);
-              console.log(response.data);
               vm.userData = response.data.filter(el => {
                 if (el.owner_id === UserService.user.id) {
                   return true

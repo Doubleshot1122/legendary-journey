@@ -5,7 +5,7 @@ exports.seed = function(knex) {
         {
             manager_id: 1,
             lead_id: 5,
-            team_name: "Council of Ricks",
+            team_name: "g48_Reid",
             avatar_url: "https://vignette3.wikia.nocookie.net/villains/images/8/8e/Transdimensional_council_of_ricks_pin_by_stewartisme-d7dtrr7.png/revision/latest?cb=20170406232952"
         },
         {
