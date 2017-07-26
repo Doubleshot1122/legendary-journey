@@ -12,7 +12,7 @@ class DataSync {
     return rp({
       method: 'GET',
       uri: `${BASE_URL}/projects/${proj_id}/stories`,
-      headers: {'X-TrackerToken': 'fb0ff656b12bf40cee14581a7854f840'},
+      headers: {'X-TrackerToken': 'db82fcf8ef077c60859be505792891a1'},
       json:true
     }).then(results => {
       return results
@@ -23,7 +23,7 @@ class DataSync {
     return rp({
       method: 'GET',
       uri: `${BASE_URL}/projects/${proj_id}/stories/${story_id}/tasks`,
-      headers: {'X-TrackerToken': 'fb0ff656b12bf40cee14581a7854f840'},
+      headers: {'X-TrackerToken': 'db82fcf8ef077c60859be505792891a1'},
       json:true
     }).then(results => {
       return results
@@ -86,7 +86,7 @@ class DataSync {
                   owner_id: localUserIDs[piv_stories[0].owner_ids[0]],
                   pivotal_project_id: piv_stories[0].project_id,
                   story_id: piv_stories[0].id,
-                  complete: helper.calculateProjectStatus(piv_stories[0].current_status)
+                  complete: piv_stories[0].current_status
                 }
                 let tasks_toLoad = {
 

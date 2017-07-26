@@ -6,7 +6,25 @@ exports.seed = function(knex) {
             name: "javascript"
         },
         {
-            name: "unix"
+            name: "bash"
+        },
+        {
+            name: "angularjs"
+        },
+        {
+            name: "html5"
+        },
+        {
+            name: "css3"
+        },
+        {
+            name: "expressjs"
+        },
+        {
+            name: 'postgresql'
+        },
+        {
+            name: 'powershell'
         }
       ]);
     })

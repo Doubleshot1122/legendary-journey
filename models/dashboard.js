@@ -27,11 +27,11 @@ class Dashboard {
       skills.forEach(skillObj => {finishedUser.skills.push(skillObj)})
       finishedUser.skills.forEach(el => {
         el.level = 1
-        el.level_cap = 520000
+        el.level_cap = 200
         levels.forEach(level => {
           if (parseInt(level.cap_amount) < parseInt(el.xp_gained)) {
             el.level = parseInt(level.id) + 1
-            el.level_cap = parseInt(level.cap_amount) + 520000
+            el.level_cap = parseInt(level.cap_amount) + 200
           }
         })
       })

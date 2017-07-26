@@ -11,13 +11,18 @@
         const vm = this
 
         vm.$onInit = onInit
+        vm.generateLowProgress = generateLowProgress
 
         function onInit() {
             $http.get('/api/dashboard/1')
                 .then(response => vm.userData = response.data)
         }
 
-
+        function generateLowProgress(currXP, currLevel) {
+          console.log("currXP", currXP);
+          console.log("currLevel", currLevel);
+          return currXP-(currLevel-200)
+        }
 
         function contributionTotal(projects, ownerID) {
             let results = []

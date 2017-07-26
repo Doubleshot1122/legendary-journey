@@ -36,14 +36,14 @@
               </span>
           </a>
         </th>
-        <th>
+        <!-- <th>
           <a href="#" ng-click="orderByField='status'; reverseSort = !reverseSort">Status
               <span ng-show="orderByField == 'status'">
                 <span ng-show="!reverseSort"><i class="fa fa-sort-asc" aria-hidden="true"></i></span>
                 <span ng-show="reverseSort"><i class="fa fa-sort-desc" aria-hidden="true"></i></span>
               </span>
           </a>
-        </th>
+        </th> -->
       </thead>
       <tbody>
         <tr ng-repeat="quest in $ctrl.userData | orderBy: orderByField:reverseSort">
@@ -51,7 +51,7 @@
           <td>{{quest.name}}</td>
           <td>{{quest.xp_amount}}</td>
           <td>{{quest.project_name}}</td>
-          <td>{{quest.complete}}</td>
+          <!-- <td>{{quest.complete}}</td> -->
         </tr>
       </tbody>
     </table>

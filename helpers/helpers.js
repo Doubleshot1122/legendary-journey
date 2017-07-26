@@ -1,10 +1,10 @@
 function calculateXPfromEstimate(estimate) {
   if(estimate === 3){
-    return 4500
+    return 150
   }else if (estimate === 2) {
-    return 2000
+    return 100
   }else if (estimate === 1) {
-    return 650
+    return 50
   }else {
     return 0
   }

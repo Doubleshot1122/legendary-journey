@@ -5,12 +5,42 @@ exports.seed = function(knex) {
         {
             skill_id: 1,
             user_id: 1,
-            xp_gained: 1570000
+            xp_gained: 450
         },
         {
             skill_id: 2,
             user_id: 1,
-            xp_gained: 300000
+            xp_gained: 820
+        },
+        {
+            skill_id: 3,
+            user_id: 1,
+            xp_gained: 150
+        },
+        {
+            skill_id: 4,
+            user_id: 1,
+            xp_gained: 630
+        },
+        {
+            skill_id: 5,
+            user_id: 1,
+            xp_gained: 630
+        },
+        {
+            skill_id: 6,
+            user_id: 1,
+            xp_gained: 450
+        },
+        {
+            skill_id: 7,
+            user_id: 1,
+            xp_gained: 601
+        },
+        {
+            skill_id: 8,
+            user_id: 1,
+            xp_gained: 820
         },
         {
             skill_id: 1,

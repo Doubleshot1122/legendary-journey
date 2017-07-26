@@ -25,11 +25,10 @@
           <br>
             <h4><b>Levels</b></h4>
             <ul class="collapsible levels" data-collapsible="expandable">
-                <li ng-repeat="skill in $ctrl.userData.skills">
-                    <div ng-click="showLevelDetails=!showLevelDetails" class="collapsible-header background"><b
-                      >{{skill.name}}</b><span class="badge circle">{{skill.level}}</span>
+                <li ng-repeat="skill in $ctrl.userData.skills | orderBy:'-level'">
+                    <div ng-click="showLevelDetails=!showLevelDetails" class="collapsible-header background"><b>{{skill.name}}</b><span class="badge circle">{{skill.level}}</span>
                       <br>
-                      <progress value="{{skill.xp_gained}}" max="{{skill.level_cap}}"></progress>
+                      <progress value="{{$ctrl.generateLowProgress(skill.xp_gained, skill.level_cap)}}" max="100"></progress>
                     </div>
                     <div ng-if="showLevelDetails" class="collapsible-body"><span>
                       <table>
